@@ -1,0 +1,153 @@
+﻿body {
+    background-image: url("/Image/Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.StartGame{
+    width:1300px;
+    margin-top:300px;
+    background-color:grey;
+    font-size:30px;
+    color:black;
+    font-weight:bolder;
+    border-radius:10px;
+}
+
+.StartGame:hover{
+    background-color:black;
+    color:white;
+    
+}
+
+.Scale {
+    margin-left: 1200px;
+    margin-top: 10px;
+    background-color: black;
+    border: 3px solid black;
+    height: 550px;
+    width: 200px;
+    color: white;
+    text-align: center;
+    opacity: 0.9;
+}
+
+    .Scale h5 {
+        font-family: Castellar;
+        text-align: center;
+        font-weight: bolder;
+    }
+
+.QuestionBlock {
+    margin-top:-50px;
+    margin-left: 40px;
+    border: 2px solid black;
+    width: 1150px;
+    height: 80px;
+    background-color: black;
+    border-radius: 10px;
+    opacity: 0.9;    
+    
+}
+    .QuestionBlock h5 {
+        color: white;
+        font-size: 25px;
+    }
+
+.Answers {
+    background-color:black;
+    display: inline-block;
+    margin-left: 40px;
+    border: 3px solid black;
+    width: 1150px;
+    height: 85px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.A {
+    width: 550px;
+    height: 40px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+    .A:hover {
+        background-color: cadetblue;
+    }
+    
+
+.B {
+    margin-left: 30px;
+    width: 550px;
+    height: 40px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+    .B:hover {
+        background-color: cadetblue;
+    }
+
+.C {
+    margin-top: 0px;
+    width: 550px;
+    height: 40px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+    .C:hover {
+        background-color: cadetblue;
+    }
+
+.D {
+    margin-top: -80px;
+    margin-left: 30px;
+    width: 550px;
+    height: 40px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+    .D:hover {
+        background-color: cadetblue;
+    }
+
+.attendance {
+    float:left;
+    margin-left:550px;
+    background-color:gray;
+    border:2px solid black;
+    border-radius:25px;
+    height: fit-content;
+    width: 200px;
+    text-align:center;
+}
+
+.MoneyWin {
+    
+    font-size: 30px;
+    font-weight: bolder;
+    color: wheat;
+    text-align: center;
+    border-radius: 20px;
+    animation-duration: 300ms;
+    animation-name: blink;
+    animation-iteration-count: 10;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

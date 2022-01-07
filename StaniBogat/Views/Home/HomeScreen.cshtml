@@ -1,0 +1,21 @@
+﻿@model GameViewModel
+
+<link href="~/css/Index.css" rel="stylesheet" />
+<form method="get">
+    
+    <input type="submit" asp-action="Index" class="StartGame" value="Започни игра" />
+</form>
+
+
+@if (@Model.MoneyWin >= 0)
+{
+    <h5 class="MoneyWin">
+        Печалба: @Model.MoneyWin лв.
+    </h5>
+}
+else
+{
+    <h5 style="background-color:gray;font-size:20px;font-weight:bolder;color:white;text-align:center;border-radius:20px">
+        Започни нова игра!
+    </h5>
+}

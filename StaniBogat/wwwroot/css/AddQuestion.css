@@ -1,0 +1,38 @@
+﻿body {
+    background-color: lightcyan;
+}
+
+.Question {
+    background-color: lightgray;
+    font-weight: 900;
+    width: 1300px;
+}
+
+.Answer {
+    
+    font-weight: 900;
+    width: 1300px;
+}
+
+.Scale {
+    font-weight: 900;
+}
+
+.Submit{
+    float:right;
+    text-align:center;
+    font-weight:900;
+    color:red;
+    font-size:20px;
+}
+
+.Questions{
+    margin-top:110px;
+}
+
+.Questions label{
+    font-weight:900;
+    font-size:30px;
+    color:red;
+    margin-left:500px;
+}

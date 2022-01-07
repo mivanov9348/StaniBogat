@@ -1,0 +1,66 @@
+﻿@model AddQuestionViewModel
+
+<link href="~/css/AddQuestion.css" rel="Stylesheet" />
+
+<form method="get">
+    <input type="submit" asp-controller="Home" asp-action="Index" value="Back"/>
+    <hr />
+    <div class="form-group">
+        <input asp-for="@Model.Question" type="text" class="Question" id="formGroupExampleInput" placeholder="Question">
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+        <input asp-for="@Model.A" type="text" class="Answer" id="formGroupExampleInput2" placeholder="A)">
+    </div>
+
+    <div class="form-group">
+        <input asp-for="@Model.B" type="text" class="Answer" id="formGroupExampleInput2" placeholder="B)">
+    </div>
+
+    <div class="form-group">
+        <input asp-for="@Model.C" type="text" class="Answer" id="formGroupExampleInput2" placeholder="C)">
+    </div>
+
+    <div class="form-group">
+        <input asp-for="@Model.D" type="text" class="Answer id="formGroupExampleInput2" placeholder="D)">
+    </div>
+    <hr />
+    <div style="text-align:center">
+        <select class="Scale" asp-for="@Model.ScaleId">
+            <option value=0 class="Scale">Select Scale...</option>
+            @foreach (var item in @Model.Scales)
+            {
+                <option class="Scale" value=@item.Id>@item.Number - @item.Money</option>
+            }
+        </select>
+    </div>
+    <hr />
+    <div style="text-align:center">
+        <select class="Scale" asp-for="@Model.CorrectAnswer">
+            <option value=0 class="Scale">Correct Answer...</option>
+            <option class="Scale" value="A">A</option>
+            <option class="Scale" value="B">B</option>
+            <option class="Scale" value="C">C</option>
+            <option class="Scale" value="D">D</option>
+        </select>
+    </div>
+    <hr />
+    <div>
+        <input asp-controller="Home" asp-action="RegisterQuestion" class="Submit" type="submit" value="Add" />
+    </div>
+</form>
+
+<br />
+<div class="Questions">
+    <label>Въпроси</label>
+    <hr />
+@foreach (var item in @Model.Questions.OrderBy(x=>x.Scale.Money))
+{
+    <div class="form-group">
+        <h5>@item.Question -  @item.Scale.Money</h5>      
+    </div>
+    <hr />
+}
+</div>

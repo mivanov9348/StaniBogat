@@ -1,0 +1,103 @@
+﻿@model GameViewModel
+
+<link href="~/css/Index.css" rel="Stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+@{
+    var color = "";
+    var backgrColor = "";
+}
+
+@if (@Model.AttendanceAnsw.Count > 0)
+{
+    <div class="attendance">
+        @foreach (var item in @Model.AttendanceAnsw)
+        {
+            <h2>@item</h2>
+        }
+    </div>
+}
+@if (@Model.FriendAnswer != null || @Model.FriendAnswer != "")
+{
+    <div class="attendance">
+        <h2>@Model.FriendAnswer</h2>
+    </div>
+}
+<div class="Scale">
+
+    <form method="get">
+        <input type="hidden" asp-for="@Model.CorrectAnswer" />
+        <input type="hidden" asp-for="@Model.GameId" />
+        @if (@Model.CallUsed == false)
+        {
+            <input type="submit" asp-action="CallFriend" value="Помощ от приятел" />
+        }
+        else
+        {
+            <input type="submit" disabled asp-action="CallFriend" value="Помощ от приятел" />
+        }
+
+        @if (@Model.FiftyFiftyUsed == false)
+        {
+            <input type="submit" asp-action="FiftyFifty" value="50/50" />
+        }
+        else
+        {
+           <input type="submit" disabled asp-action="FiftyFifty" value="50/50" />
+        }
+
+        @if (@Model.AttendanceUsed == false)
+        {
+            <input type="submit" asp-action="Attendance" value="Публика" />
+        }
+        else
+        {
+            <input type="submit" disabled asp-action="Attendance" value="Публика" />
+        }
+
+    </form>
+
+    @foreach (var item in @Model.Scales.OrderByDescending(x => x.Number))
+    {
+        if (@item.Number == 5 || @item.Number == 10 || @item.Number == 15)
+        {
+            color = "red";
+        }
+        else
+        {
+            color = "";
+        }
+        if (@Model.QuestionOrder == @item.Number)
+        {
+            backgrColor = "grey";
+        }
+        else
+        {
+            backgrColor = "";
+        }
+
+        <h5 style="color:@color;background-color:@backgrColor">@item.Number. @item.Money</h5>
+    }
+</div>
+
+<form method="post">
+    <div class="QuestionBlock">
+        <h5>@Model.Question</h5>
+    </div>
+    <div class="Answers">
+        <input type="hidden" asp-for="@Model.CorrectAnswer" />
+        <input type="hidden" asp-for="@Model.GameId" />
+        <input type="submit" asp-for="@Model.PlayerAnswer" id="A" onclick="ChangeColor('A')" asp-action="SelectAnswer" class="A" value="A) @Model.A" />
+        <input type="submit" asp-for="@Model.PlayerAnswer" id="B" onclick="ChangeColor('B')" asp-action="SelectAnswer" class="B" value="B) @Model.B" />
+        <input type="submit" asp-for="@Model.PlayerAnswer" id="C" onclick="ChangeColor('C')" asp-action="SelectAnswer" class="C" value="C) @Model.C" />
+        <input type="submit" asp-for="@Model.PlayerAnswer" id="D" onclick="ChangeColor('D')" asp-action="SelectAnswer" class="D" value="D) @Model.D" />
+    </div>
+</form>
+
+<script>
+     function ChangeColor(word){
+      let x = document.getElementById(word).style.backgroundColor="blue";
+    }
+
+</script>
