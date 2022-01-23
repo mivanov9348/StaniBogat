@@ -21,8 +21,8 @@
 }
 
 .Scale {
-    margin-left: 1200px;
-    margin-top: 10px;
+    margin-left: 1190px;
+    margin-top: 40px;
     background-color: black;
     border: 3px solid black;
     height: 550px;
@@ -30,6 +30,7 @@
     color: white;
     text-align: center;
     opacity: 0.9;
+    border-radius: 10px;
 }
 
     .Scale h5 {
@@ -39,7 +40,7 @@
     }
 
 .QuestionBlock {
-    margin-top:-50px;
+    margin-top:-80px;
     margin-left: 40px;
     border: 2px solid black;
     width: 1150px;

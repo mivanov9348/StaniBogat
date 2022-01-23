@@ -1,10 +1,15 @@
 ﻿namespace StaniBogat.Service
 {
+
+    using Microsoft.Data.SqlClient;
+    using Microsoft.SqlServer.Management.Common;
+    using Microsoft.SqlServer.Management.Smo;
     using Newtonsoft.Json;
     using StaniBogat.Data;
     using StaniBogat.Models;
     using System.Collections.Generic;
-   
+    using System.Text.RegularExpressions;
+
 
     public class QuestionService : IQuestionService
     {
@@ -233,7 +238,7 @@
                         break;
                 }
 
-                gvm = FillGameViewModel(gvm, currQuestion, currGame);                
+                gvm = FillGameViewModel(gvm, currQuestion, currGame);
                 currGame.AttendanceUsed = true;
                 gvm.AttendanceUsed = true;
             }
@@ -257,8 +262,6 @@
             return gvm;
         }
 
-         
-       
     }
 
 }

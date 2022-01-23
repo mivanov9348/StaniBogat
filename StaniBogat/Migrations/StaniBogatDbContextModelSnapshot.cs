@@ -3,19 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StaniBogat.Data;
 
 #nullable disable
 
-namespace StaniBogat.Data.Migrations
+namespace StaniBogat.Migrations
 {
     [DbContext(typeof(StaniBogatDbContext))]
-    [Migration("20220107162146_ADdToNew")]
-    partial class ADdToNew
+    partial class StaniBogatDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
